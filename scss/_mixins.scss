@@ -1,0 +1,32 @@
+// Mixins
+@mixin transition-all($e:0.2s) {
+  -webkit-transition: all $e ease-in-out;
+  -moz-transition: all $e ease-in-out;
+  transition: all $e ease-in-out;
+}
+@mixin background-cover() {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+@mixin serif-font() {
+  font-family: 'cwTeXYen', serif;
+}
+@mixin sans-serif-font() {
+  font-family: 'Microsoft JhengHei', serif;
+}
+@mixin flex-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin bg-cover{
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+@mixin straight-word{
+	-webkit-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+}
