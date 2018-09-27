@@ -21,9 +21,24 @@
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
 
+
+
+  let wdth=$(window).width();
+  let shoplist = function(e){
+    if(e > 768){
+      $('.shop-list').addClass('show')
+    }else{
+      $('.shop-list').removeClass('show')
+    }
+  }
+  shoplist(wdth);
+  $(window).resize(function() {
+    wdth=$(window).width();
+    shoplist(wdth);
+  });
   
 
-  $('#index #shop .con .con-pic .like').click(function(){
+  $('.shop .con .con-pic .like').click(function(){
     $(this).toggleClass('click');
   })
 

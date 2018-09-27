@@ -14,10 +14,26 @@
     &:hover {
       color: darken($primary, .1);
     }
+    @media (max-width: 768px){
+      font-size: 28px;
+      margin: 5px 0;
+    }
     img{
       position: relative;
       bottom: 5px;
+      @media (max-width: 992px){
+        display: none;
+      }
     }
+  }
+  .phone-cart{
+    display: none;
+    @media (max-width: 992px){
+      display: block;
+    }
+  }
+  .navbar-toggler{
+    border: 0;
   }
   .navbar-nav {
     > li.nav-item {
@@ -35,6 +51,13 @@
           background-color: transparent;
           &:hover {
             background-color: transparent;
+          }
+        }
+      }
+      a.nav-link {
+        &.cart{
+          @media (max-width: 992px){
+            display: none;
           }
         }
       }
@@ -89,6 +112,20 @@
           color: $light-primary;
         }
       }
+    }
+    
+  }
+  @media (max-width: 991px){
+    .nav-item:nth-child(2){
+      border-top: 1px #ddd solid;
+      border-bottom: 1px #ddd solid;
+    }
+    .nav-item .nav-link{
+      padding: 15px 0;
+      text-align: center;
+      @include serif-font;
+      font-size: 20px !important;
+      color: $dark-primary !important;
     }
   }
 }

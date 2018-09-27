@@ -1,0 +1,185 @@
+.shop{
+    padding-bottom: 0;
+    position: relative;
+    .list{
+        margin-bottom: 30px;
+    }
+    .con{
+        padding-bottom: 50px;
+        .con-pic{
+            height: 26.5vw;
+            max-height: 410px;
+            @include bg-cover;
+            position: relative;
+            @include transition-all;
+            &.new::before{
+                content:'本日精選';
+                position: absolute;
+                padding: 10px 5px;
+                background-color: $dark-primary;
+                @include straight-word;
+                left: 5px;
+                top: 0;
+                font-size: 16px;
+                color: #fff;
+                letter-spacing: 5px;
+                @include sans-serif-font();
+                z-index: 2;
+            }
+            &::after{
+                content:'';
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255,255,255,0.3);
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                @include transition-all
+            }
+            .like{
+                position: absolute;
+                font-size: 20px;
+                right: 20px;
+                top: 20px;
+                color: $dark-primary;
+                cursor: pointer;
+                z-index: 2;
+                &.click{
+                    font-weight: bold;
+                    animation-name: jump;
+                    animation-duration: 0.3s;
+                }
+            }
+            @media only screen and (max-width: 767px){
+                height: 315px;
+                &::after{
+                    content: none;
+                }
+            }
+        }
+        .bio{
+            border-right: 1px #f6f6f6 solid;
+            border-left: 1px #f6f6f6 solid;
+            span{
+                text-align: center;
+                font-size: 22px;
+                padding: 10px 0;
+                color: $dark-primary;
+                &:nth-child(1){
+                    flex:8;
+                    border-right: 1px #e6e6e6 solid;
+                }
+                &:nth-child(2){
+                    flex:4;
+                    font-weight: bold;
+                }
+            }
+        }
+        button{
+            width: 100%;
+            background-color: $blue;
+            color: $dark-primary;
+            font-size: 24px;
+            padding: 17px 0;
+            font-weight: bold;
+            border: none;
+            @include transition-all;
+            cursor: pointer;
+            &:hover{
+                background-color: $dark-primary;
+                color: #fff;
+            }
+        }
+        &:hover{
+            .con-pic::after{
+                opacity: 1;
+            }
+        }
+    }
+}
+#product{
+    .banner{
+		margin-top: 128px;
+		.container{
+			background-image: url('../img/header-shop.jpg');
+			@include bg-cover;
+            height: 500px;
+            display: flex;
+            justify-content: flex-end
+        }
+        h2{
+			font-weight: bold;
+			@include straight-word;
+			@include serif-font();
+			font-size: 38px;
+			color: $dark-primary;
+            line-height: 0.6;
+            margin-top: 30px;
+			p{
+				display: inline-block;
+				height: 70px;
+				width: 1px;
+				padding-top: 5px;
+				background-color: $dark-primary;
+			}
+        }
+        @media only screen and (max-width: 576px){
+            margin-top: 80px;
+            height: 300px;
+            .container{
+                height: 100%;
+            }
+            h2{
+                font-size: 24px;
+                p{
+                    height: 50px;
+                }
+            }
+        }
+    }
+    h4.title{
+        background: $dark-primary;
+        color: #fff;
+        text-align: center;
+        padding: 16px 0;
+        margin: 0;
+        font-weight: bold;
+    }
+    .shop-list{
+        list-style-type: none;
+        padding-left: 0;
+        @include sans-serif-font();
+        a{
+            font-size: 22px;
+            text-align: center;
+            li{
+                padding: 16px 0;
+                font-weight: bold;
+                border-bottom: 1px solid #EAF0ED;
+            }
+            &.active li{
+                background-color: $blue;
+            }
+        }
+    }
+    .pages-list{
+        a{
+            color: $dark-primary;
+            @include sans-serif-font;
+        }
+        .page-item.active .page-link{
+            background-color: $dark-primary;
+            color: #fff;
+        }
+    }
+    @media only screen and (max-width: 768px){
+        .shop{
+            padding-top: 0px;
+            .list{
+                padding: 0;
+            }
+        }
+    }
+}

@@ -92,7 +92,8 @@
 		.banner{
 			.container{
 				background: none;
-				height: 50vw;
+				height: 70vw;
+				max-height: 500px
 			}
 			margin-top: 80px;
 			background-image: url('../img/header.jpg');
@@ -105,7 +106,12 @@
 			.row{
 				transform: translateY(0);
 				.column-word{
-					height: 30vw;
+					height: 180px;
+					border-width: 1px;
+					box-shadow: none;
+					.con{
+						width: 102%;
+					}
 				}
 			}
 		}
@@ -116,7 +122,8 @@
 		margin-bottom: 150px;
 		@media (max-width: 768px){
 			max-height: none;
-			margin-top: 80px;
+			margin-top: 60px;
+			margin-bottom: 0px;
 			background-color: #fff;
 			&.two{
 				.row{
@@ -133,13 +140,13 @@
 				position: relative;
 				bottom: 5%;
 			}
-			@media (max-width: 576px){
+			@media (max-width: 768px){
 				height: 45vw;
-				background-color: $blue;
-			}
-			@media only screen and (max-width: 767px) and (min-width: 577px){
-				height: 45vw;
-				background-color: $blue;
+				padding: 0;
+				.over-con{
+					height: 100%;
+					bottom: 0;
+				}
 			}
 		}
 		&.two{
@@ -170,21 +177,24 @@
 					font-size: 34px;
 				}
 			    @media only screen and (max-width: 767px) and (min-width: 577px){
-					top: 50px;
+					top: -80px !important;
 			    }
-			    @media (max-width: 576px){
+			    @media (max-width: 768px){
+					display: none;
 					position: relative;
 					-webkit-writing-mode: unset;
 					writing-mode: unset;
 					line-height: 1.2;
 					right: 0;
-					margin-top: 30px;
-					top: 0;
+					top: -30px;
+					text-align: center;
+					font-size: 28px;
 					p{
-						width: 70px;
+						width: 50px;
 					    height: 1px;
 					    padding: 0;
-					    margin-left: 5px;
+						margin-left: 5px;
+						margin-bottom: 8px;
 					}
 				}
 			}
@@ -203,16 +213,27 @@
 			    	line-height: 1.8;
 			    }
 			    @media only screen and (max-width: 767px) and (min-width: 577px){
-					display: flex;
-					align-items: flex-end;
+					// display: flex;
+					// align-items: flex-end;
 			    }
-			    @media (max-width: 576px){
+			    @media (max-width: 768px){
 			    	width: 100%;
 			    	writing-mode: unset;
-			    	padding: 10px 0;
+			    	padding: 35px 15px;
 			    	letter-spacing: 0px;
-			    	line-height: 1.5;
+			    	font-size: 16px;
 			    }
+			}
+			@media (max-width: 768px){
+				&:not(.phone-con){
+					background-color: $blue;
+				}				
+			}
+		}
+		.phone{
+			display: none;
+			@media (max-width: 768px){
+				display: block !important;
 			}
 		}
 		.container{
@@ -239,136 +260,34 @@
 				background-color: $dark-primary;
 				
 			}
-		}
-	}
-	#shop{
-		padding-bottom: 0;
-		.con{
-			padding-bottom: 50px;
-			.con-pic{
-				height: 26.5vw;
-				max-height: 410px;
-				@include bg-cover;
-				position: relative;
-				@include transition-all;
-				&::before{
-					content:'本日精選';
-					position: absolute;
-					padding: 10px 5px;
-					background-color: $dark-primary;
-					@include straight-word;
-					left: 5px;
-					top: 0;
-					font-size: 16px;
-					color: #fff;
-					letter-spacing: 5px;
-					@include sans-serif-font();
-					z-index: 2;
-				}
-				&::after{
-					content:'';
-					z-index: 1;
-					width: 100%;
-					height: 100%;
-					background-color: rgba(255,255,255,0.3);
-					position: absolute;
-					top: 0;
-					left: 0;
-					opacity: 0;
-					@include transition-all
-				}
-				.like{
-					position: absolute;
-					font-size: 20px;
-					right: 20px;
-					top: 20px;
-					color: $dark-primary;
-					cursor: pointer;
-					z-index: 2;
-					&.click{
-						font-weight: bold;
-						animation-name: jump;
-					    animation-duration: 0.3s;
-					}
-				}
-			}
-			.bio{
-				border-right: 1px #f6f6f6 solid;
-				border-left: 1px #f6f6f6 solid;
-				span{
-					text-align: center;
-					font-size: 22px;
-					padding: 10px 0;
-					color: $dark-primary;
-					&:nth-child(1){
-						flex:8;
-						border-right: 1px #e6e6e6 solid;
-					}
-					&:nth-child(2){
-						flex:4;
-						font-weight: bold;
-					}
-				}
-			}
-			button{
+			@media (max-width: 768px){
 				width: 100%;
-				background-color: $blue;
-				color: $dark-primary;
-				font-size: 24px;
-				padding: 17px 0;
-				font-weight: bold;
-				border: none;
-				@include transition-all;
-				cursor: pointer;
-				&:hover{
-					background-color: $dark-primary;
-					color: #fff;
-				}
-			}
-			&:hover{
-				.con-pic::after{
-					opacity: 1;
+				font-size: 28px;
+				writing-mode: unset;
+				padding: 35px 15px;
+				letter-spacing: 0px;
+				line-height: 1.5;
+				text-align: center;
+				p{
+					display: inline-block;
+					height: 1px;
+					width: 50px;
+					padding: 0;
+					margin-bottom: 9px;
+					margin-left: 5px;
+					
 				}
 			}
 		}
 	}
-	#follow{
-		padding: 30px 0;
-		background-color: $dark-primary;
-		.con{
-			display: flex;
-			align-items: center;
-			font-size: 24px;
-			color: $blue;
-			span{
-				margin-left: 15px;
-				@include sans-serif-font();
-			}
-		}
-		.input-group-prepend{
-			background-color: $blue;
-			.input-group-text{
-				padding-left: 24px;
-				font-size: 20px;
-			}
-		}
-		input{
-			height: 56px;
-			background-color: $blue;
-			border: none;
-			font-size: 22px;
-			&:focus{
-				box-shadow: none;
-			}
-		}
-		.send-follow{
-			background-color: $yellow;
-			color: $dark-primary;
-			border: none;
-			padding: 0 24px;
-			font-size: 20px;
+	.shop{
+		.carousel-control-next, .carousel-control-prev{
+			height: 250px;
+			margin-top: 50px;
 		}
 	}
+	
+	
 
 	@media only screen and (max-width: 767px) and (min-width: 577px){
 

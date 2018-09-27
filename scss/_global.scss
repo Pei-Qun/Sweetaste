@@ -78,6 +78,52 @@ img::-moz-selection {
   background: transparent;
 }
 
+#follow{
+  padding: 30px 0;
+  background-color: $dark-primary;
+  .con{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: $blue;
+    span{
+      margin-left: 15px;
+      @include sans-serif-font();
+    }
+    @media (max-width: 768px){
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+  }
+  .input-group-prepend{
+    background-color: $blue;
+    .input-group-text{
+      padding-left: 24px;
+      font-size: 20px;
+    }
+  }
+  input{
+    height: 56px;
+    background-color: $blue;
+    border: none;
+    font-size: 22px;
+    &:focus{
+      box-shadow: none;
+    }
+  }
+  .send-follow{
+    background-color: $yellow;
+    color: $dark-primary;
+    border: none;
+    padding: 0 24px;
+    font-size: 20px;
+    @include transition-all;
+    cursor: pointer;
+    &:hover{
+      background-color: lighten($yellow, 5)
+    }
+  }
+}
 footer{
   padding: 50px 0;
   background-color: $blue;
@@ -85,6 +131,8 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 18px;
+    color: $dark-primary;
     .fa-facebook-square{
       font-size: 40px;
       position: relative;
@@ -94,7 +142,7 @@ footer{
     .box{
       color: $blue;
       background-color: $dark-primary;
-      border-radius: 3px;
+      border-radius: 5px;
       font-size: 24px;
       padding: 7px 6px 5px 6px;
     }
@@ -102,6 +150,17 @@ footer{
   .r-con{
     display: flex;
     flex-direction: column;
+    p{
+      text-align: right;
+      color: $dark-primary;
+      margin-bottom: 0;
+    }
+    @media (max-width: 768px){
+      p{
+        text-align: left;
+        padding-top: 20px;
+      }
+    }
   }
   .sweet{
     font-weight: bold;
@@ -126,4 +185,16 @@ footer{
   font-size: 36px;
   font-style: italic;
   font-family: 'GFS Didot';
+}
+.visible-xs{
+  display: none;
+  @media (max-width: 768px){
+    display: block;
+  }
+}
+.hidden-xs{
+  display: block;
+  @media (max-width: 768px){
+    display: none;
+  }
 }
