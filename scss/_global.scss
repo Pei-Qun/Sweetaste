@@ -52,8 +52,19 @@ section {
   padding: 8rem 0;
 }
 
+.f-c{
+  @include flex-center;
+  display: flex !important;
+}
+
 .section-heading {
   margin-top: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 ::-moz-selection {
@@ -138,6 +149,7 @@ footer{
       position: relative;
       top: 6px;
       color: $dark-primary;
+      cursor: pointer;
     }
     .box{
       color: $blue;
@@ -145,6 +157,7 @@ footer{
       border-radius: 5px;
       font-size: 24px;
       padding: 7px 6px 5px 6px;
+      cursor: pointer;
     }
   }
   .r-con{
@@ -195,6 +208,59 @@ footer{
 .hidden-xs{
   display: block;
   @media (max-width: 768px){
-    display: none;
+    display: none !important;
+  }
+}
+
+/* The cc */
+.cc {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #fff;
+  input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+  }
+  .checkmark {
+      position: absolute;
+      top: 7px;
+      left: 0;
+      height: 16px;
+      width: 16px;
+      background-color: #eee;
+      &:after {
+          content: "";
+          position: absolute;
+          display: none;
+      }
+      &:after {
+          left: 5px;
+          top: 2px;
+          width: 5px;
+          height: 10px;
+          border: solid $dark-primary;
+          border-width: 0 3px 3px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+      }
+  }
+  &:hover input ~ .checkmark {
+      background-color: #ccc;
+  }
+  input:checked ~ .checkmark {
+      background-color: $d-yellow;
+      &:after {
+          display: block;
+      }
   }
 }

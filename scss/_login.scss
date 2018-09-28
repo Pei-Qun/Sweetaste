@@ -50,60 +50,14 @@
             width: 100%;
             @include sans-serif-font;
             font-weight: bold;
-        }
-    }
-    /* The cc */
-    .cc {
-        display: block;
-        position: relative;
-        padding-left: 30px;
-        margin-bottom: 12px;
-        cursor: pointer;
-        font-size: 20px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        color: #fff;
-        input {
-            position: absolute;
-            opacity: 0;
+            @include transition-all;
             cursor: pointer;
-        }
-        .checkmark {
-            position: absolute;
-            top: 7px;
-            left: 0;
-            height: 16px;
-            width: 16px;
-            background-color: #eee;
-            &:after {
-                content: "";
-                position: absolute;
-                display: none;
-            }
-            &:after {
-                left: 5px;
-                top: 2px;
-                width: 5px;
-                height: 10px;
-                border: solid $dark-primary;
-                border-width: 0 3px 3px 0;
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                transform: rotate(45deg);
-            }
-        }
-        &:hover input ~ .checkmark {
-            background-color: #ccc;
-        }
-        input:checked ~ .checkmark {
-            background-color: $d-yellow;
-            &:after {
-                display: block;
+            &:hover{
+                background-color: $blue;
             }
         }
     }
+    
     .socail-con{
         background-color: $blue;
         width: 30%;

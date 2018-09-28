@@ -158,9 +158,17 @@
                 padding: 16px 0;
                 font-weight: bold;
                 border-bottom: 1px solid #EAF0ED;
+                @include transition-all;
             }
             &.active li{
                 background-color: $blue;
+            }
+            &:hover{
+                text-decoration: none;
+                li{
+                    background-color: $yellow;
+                    color: #fff;
+                }
             }
         }
     }

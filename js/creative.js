@@ -22,7 +22,7 @@
   $(window).scroll(navbarCollapse);
 
 
-
+  //甜點左區塊
   let wdth=$(window).width();
   let shoplist = function(e){
     if(e > 768){
@@ -37,9 +37,21 @@
     shoplist(wdth);
   });
   
-
+  //喜歡
   $('.shop .con .con-pic .like').click(function(){
     $(this).toggleClass('click');
+  })
+
+  //購物車刪除
+  function confirmDelet(e) {
+    var r = confirm("確定要刪除?");
+    if (r == true) {
+      $(e).fadeOut();
+    } else { }
+  }
+  $('.delet').click(function(e){
+    let num = $(this).attr('data-target');
+    confirmDelet(num);
   })
 
 
